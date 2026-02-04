@@ -9,7 +9,7 @@ To address this, I made a workflow which I can publish notes on my main vault wi
 
 ### **Directory Structure**
 
-First, there's Blog folder in my main obsidian vault. The content inside will be copied to contents folder in quartz repository. If you want some notes to publish, write them down in Blog folder. 
+The workflow begins with `Blog` folder located within the main Obsidian vault. Any content created within this directory is designated for publication and will be automatically copied to the `content` folder in the Quartz repository.
 
 The structure is organized as follows:
 ```
