@@ -1,1 +1,3 @@
-This quartz section shows how I made this blog. The overall workflow of publishing my obsidian notes
+This section shows how I set up this blog.
+
+[[Workflow]]: Introduces how I made automatic publish workflow that can be all done in main obsidian vault
