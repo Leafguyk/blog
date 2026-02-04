@@ -1,1 +1,1 @@
-hi there
+Welcome to my blog.

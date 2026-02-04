@@ -1,0 +1,1 @@
+This quartz section shows how I made this blog. The overall workflow of publishing my obsidian notes
