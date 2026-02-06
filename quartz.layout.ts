@@ -1,6 +1,23 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
+// sorting func
+const sortFunctions = {
+  sortFn: (a: any, b: any) => {
+    const orderA = a.data?.order ?? a.file?.frontmatter?.order ?? 9999
+    const orderB = b.data?.order ?? b.file?.frontmatter?.order ?? 9999
+    
+    if (orderA !== orderB) {
+      return orderA - orderB
+    }
+    
+    // Alphabetical fallback
+    const nameA = a.displayName ?? a.name
+    const nameB = b.displayName ?? b.name
+    return nameA.localeCompare(nameB, undefined, { numeric: true, sensitivity: 'base' })
+  }
+}
+
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
@@ -37,7 +54,7 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer(sortFunctions),
   ],
   right: [
     Component.Graph(),
@@ -61,7 +78,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer(sortFunctions),
   ],
   right: [],
 }

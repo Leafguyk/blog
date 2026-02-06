@@ -18,8 +18,8 @@
     "format": "npx prettier . --write",
     "test": "tsx --test",
     "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1",
-    "sync": "npx quartz sync",
-    "update": "node sync.js && npx quartz sync"
+    "update": "node sync.js && npx quartz sync",
+    "local": "node sync.js && npx quartz build --serve"
   },
   "engines": {
     "npm": ">=10.9.2",
