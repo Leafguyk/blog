@@ -18,8 +18,8 @@
     "format": "npx prettier . --write",
     "test": "tsx --test",
     "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1",
-    "sync": "npx quartz sync",
-    "update": "node sync.js && npx quartz sync"
+    "update": "node sync.js && npx quartz sync",
+    "local": "node sync.js && npx quartz build --serve"
   },
   "engines": {
     "npm": ">=10.9.2",
@@ -57,6 +57,7 @@
     "hast-util-to-html": "^9.0.5",
     "hast-util-to-jsx-runtime": "^2.3.6",
     "hast-util-to-string": "^3.0.1",
+    "i": "^0.3.7",
     "is-absolute-url": "^5.0.0",
     "js-yaml": "^4.1.1",
     "lightningcss": "^1.31.1",
