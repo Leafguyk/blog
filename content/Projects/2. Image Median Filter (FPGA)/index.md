@@ -1,4 +1,4 @@
 ---
 order: "30"
-title: Image Median FIlter (FPGA)
+title: Image Median Filter (FPGA)
 ---
