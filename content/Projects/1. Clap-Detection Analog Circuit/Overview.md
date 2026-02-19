@@ -1,5 +1,6 @@
 ---
 order: "0"
+description: Capstone project for the **Introduction to Electric Circuits** course
 ---
 ### Background
 
