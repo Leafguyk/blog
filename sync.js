@@ -16,8 +16,11 @@ console.log(`🚀 Starting blog synchronization...`);
 console.log(`Source path: ${sourceDir}`);
 
 try {
-    fs.emptyDirSync(targetDir);
-    console.log("✅ Existing content folder cleared");
+    fs.removeSync(targetDir);
+    console.log("💥 Target folder completely deleted.");
+
+    fs.ensureDirSync(targetDir);
+    console.log("✨ Fresh content folder created.");
 
     fs.copySync(sourceDir, targetDir);
     console.log("✅ New content copied");
