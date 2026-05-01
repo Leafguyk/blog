@@ -1,0 +1,46 @@
+### **Motivation**
+##### Why Quartz?
+Previously, I experimented with personal blogging platforms such as Tistory and Naver Blog. However, as an Obsidian user, I required a solution that offered seamless integration with Markdown files to directly utilize my existing notes. Traditional platforms were insufficient for this purpose. Therefore, I transitioned to Quartz, which allows direct publication of Obsidian notes.
+
+##### Workflow Optimization
+My first experience on Quartz came up with some uncomfortable points since I wished to draft posts within my main vault rather than maintaining a separate Quartz repository. Additionally, the requirement to manually execute terminal commands for every update was inefficient.
+
+To address this, I made a workflow which I can publish notes on my main vault with just one hotkey, removing complicated process such as manually execute terminal commands, copy folders and etc.
+
+### **Directory Structure**
+
+The workflow begins with `Blog` folder located within the main Obsidian vault. Any content created within this directory is designated for publication and will be automatically copied to the `content` folder in the Quartz repository.
+
+The structure is organized as follows:
+```
+Main Vault
+├── ...
+└── Blog
+    ├── index.md
+    └── quartz
+        ├── Introduction.md
+        └── Workflow.md
+```
+
+### **Automation Setup**
+
+To automate the deployment process, I utilized the [Obsidian Shell Commands](https://github.com/Taitava/obsidian-shellcommands) plugin. This allows the execution of repository commands directly from the Obsidian interface.
+
+I configured a custom `npm run update` command within the Quartz repository's `package.json`. This command executes a synchronization script followed by the standard Quartz sync function.
+
+**Configuration in `package.json`:**
+```json
+scripts: {
+    ...
+	"sync": "npx quartz sync",
+    "update": "node sync.js && npx quartz sync"
+}
+```
+
+The automation relies on a custom script, `sync.js`. This script reads the path of the main vault's blog directory from a `.env` file, fetches the content, and copies it to the Quartz repository before triggering the publication process.
+
+- **Source Code:** You can review the `sync.js` implementation [here](https://github.com/Leafguyk/blog/blob/v4/sync.js).
+
+### **Conclusion**
+
+That's all. With this workflow, I was able to reduce the publishing process to a single hotkey action. You can checkout the source code in [my Github repository](https://github.com/Leafguyk/blog)
