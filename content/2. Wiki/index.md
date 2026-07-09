@@ -1,4 +1,4 @@
 ---
 order: "20"
-title: Etc
+title: Wiki
 ---
